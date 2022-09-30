@@ -7,15 +7,18 @@ import { FPV } from './components/FPV';
 
 function App() {
   return (
-    <Canvas>
-      <Sky sunPosition={[100, 100, 20]} />
-      <ambientLight intensity={0.5} />
-      <FPV />
-      <Physics>
-        <Player />
-        <Ground />
-      </Physics>
-    </Canvas>
+    <>
+      <Canvas>
+        <Sky sunPosition={[100, 100, 20]} />
+        <ambientLight intensity={0.5} />
+        <FPV />
+        <Physics>
+          <Player />
+          <Ground />
+        </Physics>
+      </Canvas>
+      <div className='absolute centered cursor'>+</div>
+    </>
   );
 }
 
