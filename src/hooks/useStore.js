@@ -32,6 +32,7 @@ export const useStore = create(set => ({
   },
   saveWorld: () => {
     set(prev => setLocalStorage('cubes', prev.cubes));
+    window.location.reload();
   },
   resetWorld: () => set(() => ({ cubes: [] }))
 }));

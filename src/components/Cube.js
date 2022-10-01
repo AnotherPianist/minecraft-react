@@ -7,7 +7,7 @@ export const Cube = ({ position, texture }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [ref] = useBox(() => ({ type: 'Static', position }));
   const activeTexture = textures[`${texture}Texture`];
-  const [addCube, removeCube] = useStore(state => [state.addCube, state.removeCube]);
+  const [addCube, removeCube] = useStore(state => [state?.addCube, state?.removeCube]);
 
   return (
     <mesh
@@ -52,7 +52,7 @@ export const Cube = ({ position, texture }) => {
         }
       }}
     >
-      <boxBufferGeometry attach='geometry' />
+      <boxGeometry attach='geometry' />
       <meshStandardMaterial
         color={isHovered ? 'gray' : 'white'}
         transparent={true}
