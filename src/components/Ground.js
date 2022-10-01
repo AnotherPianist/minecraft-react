@@ -16,7 +16,7 @@ export const Ground = () => {
       ref={ref}
       onClick={e => {
         e.stopPropagation();
-        const [x, y, z] = Object.values(e.point).map(val => Math.ceil(val));
+        const [x, y, z] = Object.values(e.point).map(val => Math.round(val));
         addCube(x, y, z);
       }}
     >
