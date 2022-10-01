@@ -16,7 +16,14 @@ export const useStore = create(set => ({
       ]
     }));
   },
-  removeCube: () => {},
+  removeCube: (x, y, z) => {
+    set(prev => ({
+      cubes: prev.cubes.filter(cube => {
+        const [cubeX, cubeY, cubeZ] = cube.pos;
+        return cubeX !== x || cubeY !== y || cubeZ !== z;
+      })
+    }));
+  },
   saveWorld: () => {},
   resetWorld: () => {}
 }));
