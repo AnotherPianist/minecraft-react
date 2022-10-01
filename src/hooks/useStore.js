@@ -24,6 +24,9 @@ export const useStore = create(set => ({
       })
     }));
   },
+  setTexture: (texture) => {
+    set(() => ({ texture }));
+  },
   saveWorld: () => {},
   resetWorld: () => {}
 }));
